@@ -9,6 +9,8 @@
   --font-serif: var(--font-cormorant), 'Cormorant Garamond Fallback';
   --font-sans: var(--font-geist-sans), 'Geist Fallback';
   --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+  --font-arabic: var(--font-ibm-plex-arabic), 'Geist Fallback';
+  --font-arabic-serif: var(--font-amiri), 'Cormorant Garamond Fallback';
   --color-gold: var(--gold);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -173,4 +175,15 @@
   html {
     @apply font-sans;
   }
+}
+
+/* Arabic / RTL typography
+   Redefine the font custom properties within the RTL subtree so every
+   `font-serif` / `font-sans` utility resolves to an Arabic-capable font. */
+[dir="rtl"] {
+  --font-serif: var(--font-amiri), "Amiri Fallback";
+  --font-sans: var(--font-ibm-plex-arabic), "Geist Fallback";
+}
+.font-arabic {
+  font-family: var(--font-arabic);
 }

@@ -5,10 +5,10 @@ import { Menu, X } from "lucide-react"
 import { LanguageSwitcher } from "@/components/language-switcher"
 
 const links = [
-  { label: "Collection", href: "#collection" },
-  { label: "Heritage", href: "#heritage" },
-  { label: "Gifting", href: "#gifting" },
-  { label: "Contact", href: "#contact" },
+  { label: "المجموعة", href: "#collection" },
+  { label: "الإرث", href: "#heritage" },
+  { label: "الإهداء", href: "#gifting" },
+  { label: "تواصل معنا", href: "#contact" },
 ]
 
 export function SiteHeader() {
@@ -31,10 +31,10 @@ export function SiteHeader() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
         <a href="#top" className="flex flex-col leading-none">
           <span className="font-serif text-xl font-semibold tracking-[0.2em] text-foreground">
-            CASA DE PALMA
+            كاسا دي بالما
           </span>
-          <span className="mt-1 text-[10px] uppercase tracking-[0.4em] text-primary">
-            Premium Saudi Dates
+          <span className="mt-1 text-[10px] tracking-[0.2em] text-primary">
+            تمور سعودية فاخرة
           </span>
         </a>
 
@@ -43,7 +43,7 @@ export function SiteHeader() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary"
+              className="text-sm tracking-[0.1em] text-muted-foreground transition-colors hover:text-primary"
             >
               {l.label}
             </a>
@@ -51,18 +51,18 @@ export function SiteHeader() {
         </div>
 
         <div className="hidden items-center gap-6 md:flex">
-          <LanguageSwitcher lang="en" />
+          <LanguageSwitcher lang="ar" />
           <a
             href="#gifting"
-            className="rounded-sm border border-primary/60 px-5 py-2 text-xs uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+            className="rounded-sm border border-primary/60 px-5 py-2 text-xs tracking-[0.1em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
           >
-            Order Now
+            اطلب الآن
           </a>
         </div>
 
         <button
           type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
           onClick={() => setOpen((v) => !v)}
           className="text-foreground md:hidden"
         >
@@ -78,7 +78,7 @@ export function SiteHeader() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-sm uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary"
+                className="py-3 text-sm tracking-[0.1em] text-muted-foreground transition-colors hover:text-primary"
               >
                 {l.label}
               </a>
@@ -86,12 +86,12 @@ export function SiteHeader() {
             <a
               href="#gifting"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-sm border border-primary/60 px-5 py-3 text-center text-xs uppercase tracking-[0.2em] text-primary"
+              className="mt-2 rounded-sm border border-primary/60 px-5 py-3 text-center text-xs tracking-[0.1em] text-primary"
             >
-              Order Now
+              اطلب الآن
             </a>
             <div className="mt-4 flex justify-center">
-              <LanguageSwitcher lang="en" />
+              <LanguageSwitcher lang="ar" />
             </div>
           </div>
         </div>
