@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, Cormorant_Garamond } from 'next/font/google'
+import { Geist, Geist_Mono, Cormorant_Garamond, Amiri, IBM_Plex_Sans_Arabic } from 'next/font/google'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -13,12 +13,29 @@ const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
 })
+const amiri = Amiri({
+  variable: '--font-amiri',
+  subsets: ['arabic'],
+  weight: ['400', '700'],
+})
+const ibmPlexArabic = IBM_Plex_Sans_Arabic({
+  variable: '--font-ibm-plex-arabic',
+  subsets: ['arabic'],
+  weight: ['300', '400', '500', '600', '700'],
+})
 
 export const metadata: Metadata = {
   title: 'Casa de Palma — Premium Saudi Dates',
   description:
     'Casa de Palma curates the finest Saudi dates — Ajwa, Sukkari, and Medjool — harvested with heritage and crafted for the discerning palate.',
   generator: 'v0.app',
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/',
+      ar: '/ar',
+    },
+  },
   icons: {
     icon: [
       {
@@ -51,7 +68,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${geistSans.variable} ${geistMono.variable} ${cormorant.variable} bg-background`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${amiri.variable} ${ibmPlexArabic.variable} bg-background`}
     >
       <body className="font-sans antialiased">
         {children}

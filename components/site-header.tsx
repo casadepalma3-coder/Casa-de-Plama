@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
+import { LanguageSwitcher } from "@/components/language-switcher"
 
 const links = [
   { label: "Collection", href: "#collection" },
@@ -49,12 +50,15 @@ export function SiteHeader() {
           ))}
         </div>
 
-        <a
-          href="#gifting"
-          className="hidden rounded-sm border border-primary/60 px-5 py-2 text-xs uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground md:inline-block"
-        >
-          Order Now
-        </a>
+        <div className="hidden items-center gap-6 md:flex">
+          <LanguageSwitcher lang="en" />
+          <a
+            href="#gifting"
+            className="rounded-sm border border-primary/60 px-5 py-2 text-xs uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+          >
+            Order Now
+          </a>
+        </div>
 
         <button
           type="button"
@@ -86,6 +90,9 @@ export function SiteHeader() {
             >
               Order Now
             </a>
+            <div className="mt-4 flex justify-center">
+              <LanguageSwitcher lang="en" />
+            </div>
           </div>
         </div>
       )}
